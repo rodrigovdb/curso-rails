@@ -1,0 +1,40 @@
+<h1>Colaboradores</h1>
+
+<%= link_to 'Cadastrar Colaborador', new_employee_path %>
+
+<%= render 'filters' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Setor</th>
+      <th>Nascimento</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%- @employees.each do |employee| %>
+      <%- if employee.sex == 'M' %>
+        <tr style="background-color: #CCF">
+      <%- else -%>
+        <tr style="background-color: #FCC">
+      <%- end -%>
+        <td><%= employee.id %></td>
+        <td><%= employee.name %></td>
+        <td><%= employee.sector.name %></td>
+        <td><%= ajusta_data(employee.birth_date) %></td>
+        <td>
+          <%= link_to 'Visualizar', employee_path(employee) %>
+          | <%= link_to 'Editar', edit_employee_path(employee) %>
+          | <%= link_to 'Excluir', employee_path(employee), method: :delete, confirm: 'Está certo disto?' %>
+        </td>
+      </tr>
+    <%- end %>
+  </tbody>
+
+  <tfoot>
+  </tfoot>
+</table>

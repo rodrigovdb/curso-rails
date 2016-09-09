@@ -1,0 +1,18 @@
+default: &default
+  adapter   : mysql2
+  encoding  : utf8
+  username  : root
+  password  : test123
+  host      : localhost
+
+development:
+  <<: *default
+  database  : rh_development
+
+test:
+  <<: *default
+  database  : rh_test
+
+production:
+  <<: *default
+  database  : rh_production

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sector: one
+  name: MyString
+  sex: MyString
+  birth_date: 2016-08-18
+
+two:
+  sector: two
+  name: MyString
+  sex: MyString
+  birth_date: 2016-08-18
