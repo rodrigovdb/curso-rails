@@ -14,4 +14,12 @@
   <dd><%= @employee.sector.name %></dd>
 </dl>
 
+<fieldset>
+  <legend>Contatos</legend>
+
+  <%= render 'contacts/list', contacts: @employee.contacts %>
+
+  <%= link_to 'Cadastrar contato', new_employee_contact_path(@employee) %>
+</fieldset>
+
 <%= link_to 'Cancelar', employees_path %> | <%= link_to 'Editar', edit_employee_path(@employee) %>

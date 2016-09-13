@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818220158) do
+ActiveRecord::Schema.define(version: 20160913212156) do
+
+  create_table "contact_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "employee_id"
+    t.integer  "contact_type_id"
+    t.string   "phone_number"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["contact_type_id"], name: "index_contacts_on_contact_type_id", using: :btree
+    t.index ["employee_id"], name: "index_contacts_on_employee_id", using: :btree
+  end
 
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "sector_id"
@@ -28,5 +44,7 @@ ActiveRecord::Schema.define(version: 20160818220158) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "contacts", "contact_types"
+  add_foreign_key "contacts", "employees"
   add_foreign_key "employees", "sectors"
 end
