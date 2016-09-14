@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+if Sector.all.count == 0
+  Sector.create name: 'Informática'
+  Sector.create name: 'Recursos Humanos'
+  Sector.create name: 'Financeiro'
+  Sector.create name: 'Comercial'
+end
+
+if Employee.all.count == 0
+  Employee.create sector: Sector.find_by(name: 'Informatica'),      name: 'Rodrigo Maia',     sex: 'M', birth_date: Date.new(1980, 3,  1)
+  Employee.create sector: Sector.find_by(name: 'Informatica'),      name: 'Carolina Mendes',  sex: 'F', birth_date: Date.new(1985, 10, 17)
+  Employee.create sector: Sector.find_by(name: 'Recursos Humanos'), name: 'Eloiza Barros',    sex: 'F', birth_date: Date.new(1973, 4,  11)
+  Employee.create sector: Sector.find_by(name: 'Recursos Humanos'), name: 'Robson Ruiz',      sex: 'M', birth_date: Date.new(1995, 11, 13)
+  Employee.create sector: Sector.find_by(name: 'Financeiro'),       name: 'Danielle Freitas', sex: 'F', birth_date: Date.new(1988, 6,  30)
+  Employee.create sector: Sector.find_by(name: 'Comercial'),        name: 'Luiz Padilha',     sex: 'M', birth_date: Date.new(1966, 8,  3)
+end
