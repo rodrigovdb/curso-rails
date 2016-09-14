@@ -1,0 +1,36 @@
+<h1>Colaboradores</h1>
+
+<%= link_to 'Cadastrar colaborador', new_employee_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Setor</th>
+      <th>Nascimento</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%- @employees.each do |employee| %>
+      <%- if employee.sex == 'M' %>
+        <tr style="background-color: #CCF">
+      <%- else -%>
+        <tr style="background-color: #FCC">
+      <%- end -%>
+        <td><%= employee.id %></td>
+        <td><%= employee.name %></td>
+        <td><%= employee.sector.name %></td>
+        <td><%= employee.birth_date %></td>
+        <td>
+          <%= link_to 'Visualizar', employee_path(employee) %>
+        </td>
+      </tr>
+    <%- end %>
+  </tbody>
+
+  <tfoot>
+  </tfoot>
+</table>
