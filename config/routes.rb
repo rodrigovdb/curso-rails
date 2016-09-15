@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get     '/colaboradores',             to: 'employees#index',  as: :employees
-  get     '/colaboradores/cadastrar',   to: 'employees#new',    as: :new_employee
-  get     '/colaboradores/:id',         to: 'employees#show',   as: :employee
-  post    '/colaboradores',             to: 'employees#create'
-  get     '/colaboradores/:id/editar',  to: 'employees#edit',   as: :edit_employee
-  patch   '/colaboradores/:id',         to: 'employees#update'
-  delete  '/colaboradores/:id',         to: 'employees#destroy'
-
+  resources :employees, path: 'colaboradores' do
+    resources :contacts, path: 'contatos', path_names: { new: 'cadastrar', edit: 'editar' }
+  end
+  #resources :employees, path: 'colaboradores', path_names: { new: 'cadastrar', edit: 'editar' } do
+  #  resources :contacts, path: 'contatos', path_names: { new: 'cadastrar', edit: 'editar' }
+  #end
 
   get 'welcome/index'
 

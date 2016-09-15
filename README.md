@@ -33,3 +33,14 @@
   2.2 Destroy
 3. Criando links para as actions edit e update a partir do index
 4. Refatorando o controller: before_action
+
+# Aula 5
+1. Criando um helper para formatar a data
+2. Refatorando as rotas: resources
+3. Adicionando contatos ao colaborador (relacionamento has_many)
+  3.1 Gerando Model ContactType
+  3.2 Gerando Scaffold Contact
+  3.3 Relacionamentos
+  3.4 Validações
+  3.5 Rotas aninhadas
+  3.6 CRUD

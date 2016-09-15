@@ -23,7 +23,7 @@
         <td><%= employee.id %></td>
         <td><%= employee.name %></td>
         <td><%= employee.sector.name %></td>
-        <td><%= employee.birth_date %></td>
+        <td><%= ajusta_data(employee.birth_date) %></td>
         <td>
           <%= link_to 'Visualizar', employee_path(employee) %>
           | <%= link_to 'Editar',   edit_employee_path(employee) %>

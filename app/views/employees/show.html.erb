@@ -8,10 +8,18 @@
   <dd><%= @employee.sex %></dd>
 
   <dt>Data do Nascimento</dt>
-  <dd><%= @employee.birth_date %></dd>
+  <dd><%= ajusta_data(@employee.birth_date) %></dd>
 
   <dt>Setor</dt>
   <dd><%= @employee.sector.name %></dd>
 </dl>
+
+<fieldset>
+  <legend>Contatos</legend>
+
+  <%= render 'contacts/list', contacts: @employee.contacts %>
+
+  <%= link_to 'Cadastrar contato', new_employee_contact_path(@employee) %>
+</fieldset>
 
 <%= link_to 'Cancelar', employees_path %>
