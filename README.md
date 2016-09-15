@@ -44,7 +44,3 @@
   3.4 Validações
   3.5 Rotas aninhadas
   3.6 CRUD
-
-# Aula 6
-1. Pesquisar colaboradores
-2. Adicionando bootstrap
