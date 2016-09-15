@@ -2,7 +2,16 @@ class EmployeesController < ApplicationController
   before_action :set_employee,  only: [:show, :edit, :update, :destroy]
 
   def index
-    @employees = Employee.includes(:sector).order(:name)
+    # Atribui à @search_filters o conteúdo dos parâmetros informados ou inicializa um hash vazio.
+    @search_filters     = params[:filters] || {}
+    employees           = Employee
+
+    unless @search_filters.nil?
+      employees = employees.partial_name(@search_filters[:name])          unless @search_filters[:name].blank?
+      employees = employees.where(sector_id: @search_filters[:sector_id]) unless @search_filters[:sector_id].blank?
+    end
+
+    @employees = employees.includes(:sector).order(:name)
   end
 
   def show
