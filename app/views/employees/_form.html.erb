@@ -22,12 +22,12 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :sex %></dt>
+    <%= f.label :sex %>
     <%= f.select :sex, [['Masculino', 'M'], ['Feminino', 'F']], {}, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :sector %></dt>
+    <%= f.label :sector %>
     <%= f.collection_select :sector_id,
                             Sector.order(name: :asc),
                             :id,
