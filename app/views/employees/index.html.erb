@@ -26,6 +26,8 @@
         <td><%= employee.birth_date %></td>
         <td>
           <%= link_to 'Visualizar', employee_path(employee) %>
+          | <%= link_to 'Editar',   edit_employee_path(employee) %>
+          | <%= link_to 'Excluir',  employee_path(employee), method: :delete, data: { confirm: 'Está certo disto?' } %>
         </td>
       </tr>
     <%- end %>

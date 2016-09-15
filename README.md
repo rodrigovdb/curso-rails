@@ -17,7 +17,7 @@
 # Aula 3
 
 1. Criar controller Employee via linha utilizando generator
-2. Adicionando actions e suas respectivas views ao controller
+2. Adicionar actions e suas respectivas views ao controller
   2.1 Criando a action index
   2.2 Criando a action show
   2.3 Criando a action new
@@ -25,3 +25,11 @@
 3. Criando rotas para cada uma das actions
 4. Otimizando a busca de colaboradores e setores com **includes**
 5. Criando links para as actions show e new a partir do index
+
+# Aula 4
+1. Adicionar actions edit e sua view ao controller Employee
+2. Adicionar actions ao controller Employee
+  2.1 Update
+  2.2 Destroy
+3. Criando links para as actions edit e update a partir do index
+4. Refatorando o controller: before_action
