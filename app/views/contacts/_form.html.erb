@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :contact_type_id %>
     <%= f.collection_select :contact_type_id,
                             ContactType.order(name: :asc),
                             :id,
                             :name,
-                            { include_blank: '- Selecione -' } %>
+                            { include_blank: '- Selecione -' },
+                            { class: 'form-control' } %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit 'Salvar', class: 'btn btn-success' %>
+  <%= link_to 'Cancelar', employee_path(employee), class: 'btn btn-danger' %>
 <% end %>

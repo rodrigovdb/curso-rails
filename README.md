@@ -44,3 +44,7 @@
   3.4 Validações
   3.5 Rotas aninhadas
   3.6 CRUD
+
+# Aula 6
+1. Instalando o bootstrap
+2. Pesquisando colaboradores

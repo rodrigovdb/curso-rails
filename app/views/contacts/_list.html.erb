@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Tipo de Contato</th>
@@ -13,8 +13,12 @@
         <td><%= contact.contact_type.name %></td>
         <td><%= contact.phone_number %></td>
         <td>
-          <%= link_to 'Editar', edit_employee_contact_path(contact.employee, contact) %>
-          <%= link_to 'Excluir', employee_contact_path(contact.employee, contact), method: :delete, data: { confirm: 'Está certo disto?' } %>
+          <%= link_to edit_employee_contact_path(contact.employee, contact), class: 'btn btn-default btn-sm' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= link_to employee_contact_path(contact.employee, contact), method: :delete, data: { confirm: 'Está certo disto?' }, class: 'btn btn-default btn-sm' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
         </td>
       </tr>
     <% end %>

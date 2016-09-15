@@ -1,25 +1,39 @@
 <h1>Visualizar colaborador</h1>
 
-<dl>
-  <dt>Nome</dt>
-  <dd><%= @employee.name %></dd>
+<div class="form-group">
+  <label>Nome</label>
+  <div class="form-control-static"><%= @employee.name %></div>
+</div>
 
-  <dt>Sexo</dt>
-  <dd><%= @employee.sex %></dd>
+<div class="form-group">
+  <label>Sexo</label>
+  <div class="form-control-static"><%= @employee.sex == 'M' ? 'Masculino' : 'Feminino' %></div>
+</div>
 
-  <dt>Data do Nascimento</dt>
-  <dd><%= ajusta_data(@employee.birth_date) %></dd>
+<div class="form-group">
+  <label>Data de Nascimento</label>
+  <div class="form-control-static"><%= ajusta_data(@employee.birth_date) %></div>
+</div>
 
-  <dt>Setor</dt>
-  <dd><%= @employee.sector.name %></dd>
-</dl>
+<div class="form-group">
+  <label>Setor</label>
+  <div class="form-control-static"><%= @employee.sector.name %></div>
+</div>
 
 <fieldset>
   <legend>Contatos</legend>
 
   <%= render 'contacts/list', contacts: @employee.contacts %>
-
-  <%= link_to 'Cadastrar contato', new_employee_contact_path(@employee) %>
 </fieldset>
 
-<%= link_to 'Cancelar', employees_path %>
+<div class="btn-group" role="group">
+  <%= link_to new_employee_contact_path(@employee), class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Cadastrar Contato
+  <% end %>
+
+  <%= link_to employees_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    Voltar
+  <% end %>
+</div>
