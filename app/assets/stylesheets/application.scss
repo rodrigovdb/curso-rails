@@ -2,3 +2,25 @@
 @import "bootstrap";
 
 @import "*";
+
+#login{
+  width   : 440px;
+  margin  : auto;
+
+  a, a:visited, a:active{
+    color           : black;
+    text-decoration : underline;
+  }
+
+  a:hover {
+    color             : #555;
+    background-color  : #fff;
+  }
+}
+
+#top_menu{
+  background-color  : #ccc;
+  margin            : -33px -30px 0px -30px;
+  padding           : 10px;
+  text-align        : right;
+}

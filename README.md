@@ -48,3 +48,6 @@
 # Aula 6
 1. Instalando o bootstrap
 2. Pesquisando colaboradores
+
+# Aula 7
+1. Adicionando o Devise ao projeto

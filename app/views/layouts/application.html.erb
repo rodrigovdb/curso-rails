@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render 'menu' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

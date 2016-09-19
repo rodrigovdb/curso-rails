@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, path: ''
   resources :employees, path: 'colaboradores' do
     resources :contacts, path: 'contatos', path_names: { new: 'cadastrar', edit: 'editar' }
   end
