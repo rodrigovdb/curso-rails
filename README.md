@@ -51,7 +51,7 @@
 
 # Aula 7
 1. Adicionando o Devise ao projeto
-
-# Aula 8
 1. Configurando o envio de emails
+
+# Aula 08
 2. Criando um mailer
