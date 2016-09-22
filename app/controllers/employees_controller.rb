@@ -60,6 +60,12 @@ class EmployeesController < ApplicationController
     redirect_to employees_path, notice: 'Colaborador excluído com sucesso'
   end
 
+  def send_by_mail
+    EmployeeMailer.employees_email(current_user).deliver_now
+
+    redirect_to employees_path, notice: 'Listagem enviada por email com sucesso'
+  end
+
   private
 
   def set_employee

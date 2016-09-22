@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Listagem de colaboradores</h1>
+    <p>Olá <%= @user.email %>,</p>
+
+    <p>Segue a lista de colaboradores cadastrados.</p>
+
+    <table class="table" width="100%" border="1">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Setor</th>
+          <th>Nascimento</th>
+          <th>Sexo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%- @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.id %></td>
+            <td><%= employee.name %></td>
+            <td><%= employee.sector.name %></td>
+            <td><%= employee.birth_date %></td>
+            <td><%= employee.sex %></td>
+          </tr>
+        <%- end %>
+      </tbody>
+
+      <tfoot>
+      </tfoot>
+    </table>
+
+
+    <p>Tenha um bom dia.</p>
+  </body>
+</html>
