@@ -48,3 +48,14 @@
 # Aula 6
 1. Instalando o bootstrap
 2. Pesquisando colaboradores
+
+# Aula 7
+1. Adicionando o Devise ao projeto
+1. Configurando o envio de emails
+
+# Aula 08
+1. Criando um mailer
+2. Configurando o deploy com mina
+
+# Aula 09
+1. Fazendo deploy da aplicação

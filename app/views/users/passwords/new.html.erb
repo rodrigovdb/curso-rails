@@ -1,0 +1,20 @@
+<div class="panel panel-primary" id="login">
+  <div class="panel-heading">.: Esqueceu sua senha?</div>
+
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Envie-me instruções para resetar o password", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>
