@@ -54,4 +54,8 @@
 1. Configurando o envio de emails
 
 # Aula 08
-2. Criando um mailer
+1. Criando um mailer
+2. Configurando o deploy com mina
+
+# Aula 09
+1. Fazendo deploy da aplicação
