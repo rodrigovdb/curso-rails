@@ -72,8 +72,7 @@ end
 
 # Instala as dependencias do sistema operacional no servidor de deploy.
 task install_dependencies: :setup_environment do
-  # queue! %[sudo apt-get install git nodejs npm nginx build-essential libxml2 libxml2-dev libxslt-dev libmysqlclient-dev -y]
-  queue! %[sudo apt-get install git nodejs npm nginx build-essential libxml2 libxml2-dev libxslt-dev -y]
+  queue! %[sudo apt-get install git nodejs npm nginx build-essential libxml2 libxml2-dev libxslt-dev libmysqlclient-dev -y]
 end
 
 # Instala o RVM de acordo com as recomendações do rvm.io
