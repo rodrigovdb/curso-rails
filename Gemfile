@@ -30,6 +30,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'mina',         require: false
   gem 'mina-unicorn', require: false
+  gem 'rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
