@@ -12,39 +12,39 @@
 
 ActiveRecord::Schema.define(version: 20160916174818) do
 
-  create_table "contact_types", force: :cascade do |t|
+  create_table "contact_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "contacts", force: :cascade do |t|
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "employee_id"
     t.integer  "contact_type_id"
     t.string   "phone_number"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["contact_type_id"], name: "index_contacts_on_contact_type_id"
-    t.index ["employee_id"], name: "index_contacts_on_employee_id"
+    t.index ["contact_type_id"], name: "index_contacts_on_contact_type_id", using: :btree
+    t.index ["employee_id"], name: "index_contacts_on_employee_id", using: :btree
   end
 
-  create_table "employees", force: :cascade do |t|
+  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "sector_id"
     t.string   "name"
     t.string   "sex"
     t.date     "birth_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sector_id"], name: "index_employees_on_sector_id"
+    t.index ["sector_id"], name: "index_employees_on_sector_id", using: :btree
   end
 
-  create_table "sectors", force: :cascade do |t|
+  create_table "sectors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -57,8 +57,11 @@ ActiveRecord::Schema.define(version: 20160916174818) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "contacts", "contact_types"
+  add_foreign_key "contacts", "employees"
+  add_foreign_key "employees", "sectors"
 end

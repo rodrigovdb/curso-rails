@@ -6,4 +6,13 @@ class EmployeeMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Colaboradores cadastrados')
   end
+
+  def cron_mail
+    @employees  = Employee.includes(:sector).order(:name)
+    @user       = User.first
+
+    mail(to: "#{@user.email}", subject: 'Colaboradores cadastrados') do |format|
+      format.html { render 'employees_email' }
+    end
+  end
 end

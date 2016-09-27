@@ -19,3 +19,7 @@ if ContactType.all.count == 0
   ContactType.create name: 'Comercial'
   ContactType.create name: 'Celular'
 end
+
+if User.all.count == 0
+  User.create email: 'rodrigovdb@gmail.com', password: 'rapadura'
+end
